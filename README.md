@@ -34,11 +34,13 @@ O conversor usa somente a biblioteca padrão do Python; nenhuma dependência adi
 
 O conversor não altera a save de console original nem sobrescreve revisões existentes: ele acrescenta uma revisão no destino escolhido. Ainda assim, mantenha uma cópia de segurança dos arquivos importantes.
 
-## Limitações e aviso
+## Caminhos das saves
 
-O conversor espera a estrutura e os arquivos de save do Forza Horizon 2 listados acima. `--force` ignora falhas de validação e deve ser usado somente quando você entende o motivo do aviso ou erro.
+Forza Horizon 2
+- Pasta do Azimuth\data\titles\1A96545B\saves
 
-Projeto independente e não oficial, sem afiliação com Microsoft, Turn 10, Forza ou Azimuth.
+Forza Motorsport 5
+- %USERPROFILE%\Saved Games\Race One Hub\RaceOne5\data\titles\7B35D917\saves
 
 ## Agradecimentos
 
