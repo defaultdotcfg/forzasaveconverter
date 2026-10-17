@@ -1,16 +1,21 @@
-# FH2 Save Converter
+# Forza Save Converter
 
-Ferramenta para converter saves de console do **Forza Horizon 2** para a estrutura de revisões utilizada pelo emulador Azimuth. Inclui interface gráfica multilíngue e linha de comando.
+Forza Save Converter é uma ferramenta de conversão de saves dos jogos da série Forza, baixados pela ferramenta XBsync no PC, para funcionar nos ports para PC (Azimuth e RaceOneHub). A ferramenta estrutura a pasta corretamente para o save ser reconhecido nesses ports sem modficar nenhum arquivo.
+
+Ferramenta criada com Claude e Manus.
 
 ## Recursos
 
-- Lê uma pasta de save ou um arquivo `.zip`.
+- Lê a pasta da save ou o arquivo em `.zip`.
 - Verifica os cinco arquivos esperados: `BinarySaveState`, `PlayerDatabase`, `ProfileData`, `SaveState` e `VersionFlags`.
-- Cria uma nova revisão Azimuth e valida o `commit` gerado usando tamanho e hash SHA-256 dos arquivos.
+- Cria uma nova revisão para o port selecionado e valida o `commit` gerado usando tamanho e hash SHA-256 dos arquivos.
 - Pode adicionar a revisão a um usuário Azimuth existente ou criar uma nova estrutura.
-- Permite usar o `ProfileData` da save do console ou, quando há uma revisão existente, o `ProfileData` do emulador.
 - Inclui simulação sem gravação, análise da origem e ferramenta para verificar revisões existentes.
-- A interface está disponível em Português (Brasil), English e Español.
+- Interface disponível em Português (Brasil), English e Español.
+
+## Compatibilidade
+- Forza Horizon 2 (Azimuth Launcher)
+- Forza Motorsport 5 (WIP)
 
 ## Requisitos
 
@@ -21,44 +26,6 @@ Ferramenta para converter saves de console do **Forza Horizon 2** para a estrutu
 
 O conversor usa somente a biblioteca padrão do Python; nenhuma dependência adicional é necessária para executar o script.
 
-## Arquivos
-
-```text
-.
-├── fh2_to_azimuth.py
-└── fh2_to_azimuth_build.bat
-```
-
-Mantenha o script Python e o BAT na mesma pasta.
-
-## Compilar para `.exe` no Windows
-
-Execute:
-
-```text
-fh2_to_azimuth_build.bat
-```
-
-O BAT instala/atualiza o PyInstaller e gera:
-
-```text
-dist\FH2 Save Converter.exe
-```
-
-## Uso da interface gráfica
-
-Execute o script sem argumentos:
-
-```bash
-python fh2_to_azimuth.py
-```
-
-1. Selecione a pasta da save do console ou um `.zip` que a contenha.
-2. Escolha o destino Azimuth.
-3. Selecione o modo de destino e a origem de `ProfileData`, se necessário.
-4. Opcionalmente, use **Simular** para conferir a operação sem gravar nada.
-5. Clique em **Converter**. Uma nova revisão será criada e verificada.
-
 ### Modos de destino
 
 - **Usuário existente (`existing`)**: adiciona uma revisão em uma estrutura existente do emulador, normalmente `saves/player-1` ou uma pasta `User_*`.
@@ -66,50 +33,8 @@ python fh2_to_azimuth.py
 
 O conversor não altera a save de console original nem sobrescreve revisões existentes: ele acrescenta uma revisão no destino escolhido. Ainda assim, mantenha uma cópia de segurança dos arquivos importantes.
 
-## Linha de comando
-
-Ajuda e opções disponíveis:
-
-```bash
-python fh2_to_azimuth.py --help
-```
-
-Analisar uma pasta ou ZIP:
-
-```bash
-python fh2_to_azimuth.py info "C:\caminho\para\a\save"
-```
-
-Converter para um usuário existente:
-
-```bash
-python fh2_to_azimuth.py convert "C:\caminho\para\a\save" "C:\Azimuth\saves\player-1" --layout existing
-```
-
-Criar uma estrutura nova:
-
-```bash
-python fh2_to_azimuth.py convert "C:\caminho\para\a\save" "C:\caminho\de\saida" --layout new
-```
-
-Simular sem escrever arquivos:
-
-```bash
-python fh2_to_azimuth.py convert "C:\caminho\para\a\save" "C:\caminho\de\saida" --layout new --dry-run
-```
-
-Verificar revisões e hashes:
-
-```bash
-python fh2_to_azimuth.py verify "C:\Azimuth\saves\player-1"
-```
-
-Se a origem contiver várias saves, use `--pick TEXTO`; se houver vários usuários no destino, escolha com `--user User_...`. Consulte `--help` para as demais opções, inclusive seleção de `ProfileData` e `--force` (ignorar validação).
-
 ## Limitações e aviso
 
 O conversor espera a estrutura e os arquivos de save do Forza Horizon 2 listados acima. `--force` ignora falhas de validação e deve ser usado somente quando você entende o motivo do aviso ou erro.
 
 Projeto independente e não oficial, sem afiliação com Microsoft, Turn 10, Forza ou Azimuth.
-
-**Licença:** ainda não definida. Adicione um arquivo `LICENSE` antes de redistribuir o código sob uma licença específica.
