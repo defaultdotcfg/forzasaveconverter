@@ -43,5 +43,7 @@ Projeto independente e não oficial, sem afiliação com Microsoft, Turn 10, For
 ## Agradecimentos
 
 XBSync - https://github.com/D3FEKT/XBsync
+
 RaceOneHub (FM5) - https://github.com/LoZazaMastro/RaceOneHub
+
 Azimuth (FH2) - https://almost-there-games.itch.io/azimuth
