@@ -16,7 +16,7 @@ Ferramenta criada com Claude e Manus.
 ## Compatibilidade
 
 - Forza Horizon 2 (Azimuth Launcher)
-- Forza Motorsport 5 (WIP)
+- Forza Motorsport 5 (RaceOneHub)
 
 ## Requisitos
 
