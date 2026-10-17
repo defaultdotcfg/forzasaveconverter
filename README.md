@@ -7,11 +7,11 @@ Ferramenta criada com Claude e Manus.
 ## Recursos
 
 - Lê a pasta da save ou o arquivo em `.zip`.
-- Verifica os cinco arquivos esperados: `BinarySaveState`, `PlayerDatabase`, `ProfileData`, `SaveState` e `VersionFlags`.
-- Cria uma nova revisão para o port selecionado e valida o `commit` gerado usando tamanho e hash SHA-256 dos arquivos.
-- Pode adicionar a revisão a um usuário Azimuth existente ou criar uma nova estrutura.
+- Verifica os arquivos esperados de cada jogo salvo: `BinarySaveState`, `PlayerDatabase`, `ProfileData`, `SaveState` e `VersionFlags`.
+- Cria uma nova revisão para o port selecionado.
+- Pode adicionar a revisão a um usuário existente ou criar uma nova estrutura.
 - Inclui simulação sem gravação, análise da origem e ferramenta para verificar revisões existentes.
-- Interface disponível em Português (Brasil), English e Español.
+- Disponível em Português (Brasil), English e Español.
 
 ## Compatibilidade
 
@@ -26,13 +26,6 @@ Ferramenta criada com Claude e Manus.
 - Conexão à internet na primeira compilação para instalar o PyInstaller.
 
 O conversor usa somente a biblioteca padrão do Python; nenhuma dependência adicional é necessária para executar o script.
-
-### Modos de destino
-
-- **Usuário existente (`existing`)**: adiciona uma revisão em uma estrutura existente do emulador, normalmente `saves/player-1` ou uma pasta `User_*`.
-- **Estrutura nova (`new`)**: cria `User_9000000000000/revisions/<revisão>/...` na pasta selecionada. A pasta `User_9000000000000` é usada para compatibilidade com o Azimuth.
-
-O conversor não altera a save de console original nem sobrescreve revisões existentes: ele acrescenta uma revisão no destino escolhido. Ainda assim, mantenha uma cópia de segurança dos arquivos importantes.
 
 ## Caminhos das saves
 
