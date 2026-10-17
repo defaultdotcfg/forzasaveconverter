@@ -14,6 +14,7 @@ Ferramenta criada com Claude e Manus.
 - Interface disponível em Português (Brasil), English e Español.
 
 ## Compatibilidade
+
 - Forza Horizon 2 (Azimuth Launcher)
 - Forza Motorsport 5 (WIP)
 
@@ -38,3 +39,9 @@ O conversor não altera a save de console original nem sobrescreve revisões exi
 O conversor espera a estrutura e os arquivos de save do Forza Horizon 2 listados acima. `--force` ignora falhas de validação e deve ser usado somente quando você entende o motivo do aviso ou erro.
 
 Projeto independente e não oficial, sem afiliação com Microsoft, Turn 10, Forza ou Azimuth.
+
+## Agradecimentos
+
+XBSync - https://github.com/D3FEKT/XBsync
+RaceOneHub (FM5) - https://github.com/LoZazaMastro/RaceOneHub
+Azimuth (FH2) - https://almost-there-games.itch.io/azimuth
